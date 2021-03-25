@@ -61,8 +61,8 @@ HTTP/1.1 200 OK
 
 ```json
 {
-    message: 'You are authenticated.',
-    user: <user email>,
+    "message": "You are authenticated.",
+    "user": "<user email>",
 }
 ```
 
@@ -72,8 +72,8 @@ HTTP/1.1 401 UNAUTHORIZED
 
 ```json
 {
-    message: 'You are not authenticated.',
-    user: <user email>,
+    "message": "You are not authenticated.",
+    "user": "<user email>",
 }
 ```
 
@@ -83,8 +83,8 @@ HTTP/1.1 401 UNAUTHORIZED
 
 ```json
 body:{
-    username,
-    password
+    "username":"username",
+    "password":"password"
 }
 ```
 
@@ -112,7 +112,7 @@ _generate public and private keys pair used for encrypt/decrypt purposes in endp
 
 ```json
 headers:[
-    Authorization:Bearer <GENERATED-TOKEN>
+    "Authorization":"Bearer <GENERATED-TOKEN>"
 ]
 ```
 
@@ -123,10 +123,10 @@ HTTP/1.1 200 OK
     "-----BEGIN PRIVATE KEY-----\n
     ...........
     ...........
-    -----END PRIVATE KEY-----\n",
+    -----END PRIVATE KEY-----\n ",
 
 "pubKey":
-     -----BEGIN PUBLIC KEY-----\n
+     "-----BEGIN PUBLIC KEY-----\n
     ...........
     ...........
     -----END PUBLIC KEY-----\n"
@@ -140,8 +140,8 @@ HTTP/1.1 401 UNAUTHORIZED
 
 ```json
 {
-    message: 'You are not authenticated.',
-    user: <user email>,
+    "message": "You are not authenticated.",
+    "user": "<user email>",
 }
 ```
 
@@ -155,12 +155,12 @@ _Encrypts provided pdf file using users public key, stored in db. When key hasn'
 
 ```json
 headers:[
-    Authorization:Bearer <GENERATED-TOKEN>
-    Content-Type: application/pdf
+    "Authorization":"Bearer <GENERATED-TOKEN>",
+    "Content-Type": "application/pdf"
 ]
 
 body:[
-    file: [pdf-file]
+    "file": "<pdf-file>"
 ]
 
 ```
@@ -168,7 +168,7 @@ body:[
 ```http
 HTTP/1.1 200 OK
 {
-    [encrypted-file-content]
+    "encrypted-file-content"
 }
 ```
 
@@ -185,8 +185,8 @@ HTTP/1.1 401 UNAUTHORIZED
 
 ```json
 {
-    message: 'You are not authenticated.',
-    user: <user email>,
+    "message": "You are not authenticated.",
+    "user": "<user email>",
 }
 ```
 
@@ -200,12 +200,12 @@ _It is technical api endpoint created only for test/demonstration purposes, to t
 
 ```json
 headers:[
-    Authorization:Bearer <GENERATED-TOKEN>
-    Content-Type: application/pdf
+    "Authorization":"Bearer <GENERATED-TOKEN>"
+    "Content-Type": "application/pdf"
 ]
 
 body:[
-    file: [pdf-file]
+    "file": "<pdf-file>"
 ]
 
 ```
@@ -213,7 +213,7 @@ body:[
 ```http
 HTTP/1.1 200 OK
 {
-    [decrypted-file-content]
+    "<decrypted-file-content>"
 }
 ```
 
@@ -230,8 +230,8 @@ HTTP/1.1 401 UNAUTHORIZED
 
 ```json
 {
-    message: 'You are not authenticated.',
-    user: <user email>,
+    "message": "You are not authenticated.",
+    "user": "<user email>",
 }
 ```
 

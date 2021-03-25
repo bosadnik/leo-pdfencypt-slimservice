@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "author": "bartłomiej osadnik <bartlomiej@osadnik.com>",
-  "license": "ISC", 
+  "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
