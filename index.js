@@ -1,10 +1,10 @@
-const express = require('express');
 const http = require('http');
 const debug = require('debug')('leo-pdfencrypt-slimservice:server');
 const app = require('./app')
 
 
 
+// eslint-disable-next-line no-undef
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -59,10 +59,12 @@ function onError(error) {
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
+      // eslint-disable-next-line no-undef
       process.exit(1);
       break;
     case 'EADDRINUSE':
       console.error(bind + ' is already in use');
+      // eslint-disable-next-line no-undef
       process.exit(1);
       break;
     default:

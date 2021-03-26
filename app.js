@@ -7,7 +7,8 @@ const passport = require('passport');
 const passportJWT = require('passport-jwt');
 const jwt = require('jsonwebtoken');
 const fileStreamRotator = require('file-stream-rotator')
-
+var multer = require('multer');
+var upload = multer();
 
 
 //routes
@@ -93,8 +94,11 @@ const passportStrategy = new passportJWT.Strategy(jwtOptions, strategyCallback);
 passport.use(passportStrategy);
 
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+ app.use(express.urlencoded({ extended: true }));
+ app.use(express.json());
+ app.use(upload.any()); 
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 
