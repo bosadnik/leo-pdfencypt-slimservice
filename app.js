@@ -130,7 +130,7 @@ router.post('/sign-in', authLimiter, async (req, res) => {
                 email:verification.email
             };
             const options = {
-                expiresIn: env.JWT_EXPIRES_IN || '14 days',
+                expiresIn: env.JWT_EXPIRES_IN || '5 minutes',
             };
             const token = jwt.sign(payload, jwtOptions.secretOrKey, options);
             
